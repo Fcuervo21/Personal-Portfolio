@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Fcuervo21/Personal-Portfolio#readme",
   "dependencies": {
     "ejs": "^3.1.6",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "particles.js": "^2.0.0"
   }
 }
