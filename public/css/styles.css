@@ -96,7 +96,7 @@ h1 {
     align-items: center;
     justify-content: center;
 }
-.about-title{
+.title-container{
     display: flex;
     text-align: center;
     font-family: var(--font-selected);
@@ -201,14 +201,16 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    /* align-items: flex-start; */
     padding: 20px;
     min-height: 15.625rem;
 }
 .tag-container{
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
     width: 100%;
+    align-items: center;
 }
 .tag {
     background: #FFD369;
@@ -216,7 +218,7 @@ h1 {
     margin: 0;
     color: #000;
     padding: 2px 10px;
-    margin: 0 10px 0 10px;
+    margin: 0 10px 5px 10px;
     font-family: var(--font-selected);
     font-size: 0.7rem;
     font-weight: bold;
@@ -225,20 +227,22 @@ h1 {
     color: #000;
     font-family: var(--font-selected);
     font-size: 1.5rem;
-    margin: 1.4rem 0 1.4rem 0;
+    margin: 0;
+    margin-top: 1rem;
 }
 .card-body p {
     font-size: 1rem;
     color: #000;
     font-family: var(--font-selected);
-    margin: 0 0 2rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 .card-links {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    padding: 0, 2rem, 0, 2rem;
+    padding-top: 1rem;
 }
   
 .card-links img {
@@ -271,6 +275,32 @@ h1 {
   
 .btn-link:hover:after {
     opacity: 1;
+}
+.skills-icons-grid{
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 10rem);
+    grid-row: auto;
+    grid-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+
+}
+.skills-images{
+    width: 100%;
+    padding: 1rem;
+    transition: transform .2s;
+    align-self: center;
+    justify-self: center;
+}
+.skills-images:nth-child(2) {
+    width: 107%;
+}
+.skills-images:nth-child(3), .skills-images:nth-child(7){
+    width: 73%;
+}
+.skills-images:hover{
+    transform: scale(1.2);
 }
 
 
@@ -315,6 +345,14 @@ h1 {
     .my-phrase-author{
         font-size: 2rem;
     }
+    .card{
+        width: 19rem;
+    }
+    .skills-icons-grid{
+        grid-template-columns: repeat(4, 7rem);
+        grid-row: auto;
+        grid-gap: 1rem;
+    }
 }
 @media (max-width: 500px) {
     .my-name {
@@ -349,5 +387,10 @@ h1 {
     }
     .my-phrase-author{
         font-size: 1rem;
+    }
+    .skills-icons-grid{
+        grid-template-columns: repeat(3, 5rem);
+        grid-row: auto;
+        grid-gap: 1rem;
     }
 }
