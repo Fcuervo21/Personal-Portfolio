@@ -201,13 +201,11 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: flex-start; */
     padding: 20px;
     min-height: 15.625rem;
 }
 .tag-container{
     display: flex;
-    /* flex-direction: row; */
     flex-wrap: wrap;
     width: 100%;
     align-items: center;
@@ -302,6 +300,119 @@ h1 {
 .skills-images:hover{
     transform: scale(1.2);
 }
+.contact-container{
+    display: flex;
+    flex-direction: row;
+}
+.contact-info-container{
+    background-color: #222831;
+    justify-content: center;
+    padding: 2rem;
+    width: 50%;
+}
+.contact-info-container h2{
+    font-family: var(--font-selected);
+    font-size: 3rem;
+    color: #EEEEEE;
+    text-align: center;
+}
+.contact-info-container p{
+    font-family: var(--font-selected);
+    font-size: 1.2rem;
+    color: #EEEEEE;
+    text-align: center;
+
+}
+.social-media-blocks{
+    display: flex;
+    flex-direction: column;
+}
+.social-media-blocks-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.social-media-blocks-card-title{
+    font-family: var(--font-selected);
+    font-size: 2rem;
+    color: #EEEEEE;
+    width: 35%;
+    text-align: center;
+}
+.social-media-blocks-card a{
+    text-align: center;
+    width: 40%;
+}
+.social-media-blocks-card img{
+    width: 45%;
+}
+.contact-email-container{
+    width: 50%;
+    background-color: #EEEEEE;
+    border: 1px solid #222831;
+    margin-left: 0;
+    padding: 2rem;
+}
+.contact-email-container h2{
+    font-family: var(--font-selected);
+    font-size: 3rem;
+    color: #222831;
+    text-align: center;
+}
+.form-elements{
+    display: flex;
+    flex-direction: column;
+}
+.form-elements label{
+    font-family: var(--font-selected);
+    font-size: 1rem;
+    color: #222831;
+    text-align: left;
+    padding: 0.5rem;
+}
+input{
+    border: 1px solid #222831;
+    height: 1.5rem;
+    padding-left: 1rem;
+    border-radius: 5px;
+    font-family: var(--font-selected);
+}
+input:focus{
+    outline-color:#FFD369;
+}
+textarea{
+    border: 1px solid #222831;
+    padding-left: 1rem;
+    border-radius: 5px;
+    font-family: var(--font-selected);
+    resize: none;
+}
+textarea:focus{
+    outline-color:#FFD369;
+}
+.form-elements button{
+    border-radius: 4px;
+    background-color: #222831;
+    border: none;
+    color: #EEEEEE;
+    text-align: center;
+    font-size: 1rem;
+    font-family: var(--font-selected);
+    width: 10rem;
+    height: 3rem;
+    transition: all 0.5s;
+    cursor: pointer;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+    margin-top: 2rem;
+}
+.form-elements button:hover{
+    background-color: #FFD369;
+    color: #222831;
+}
+
+
 
 
 
