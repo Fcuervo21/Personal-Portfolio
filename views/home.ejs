@@ -201,17 +201,17 @@
 		</div>
 		<div class="contact-email-container">
 			<h2>Get in touch</h2>
-			<form method="post" action="/send-email">
+			<form class="contact-form" >
 				<div class="form-elements">
 					<label>FULL NAME</label>
-					<input class="input-style" type="text" name="name" placeholder="Name" autocomplete="off">
+					<input class="input-style" id="name" type="text" name="name" placeholder="Name" autocomplete="off">
 					<label>EMAIL ADDRESS</label>
-					<input class="input-style" type="email" name="email" placeholder="Email" autocomplete="off">
+					<input class="input-style" id="email" type="email" name="email" placeholder="Email" autocomplete="off">
 					<label>SUBJECT</label>
-					<input class="input-style" type="text" name="subject" placeholder="Subject" autocomplete="off">
+					<input class="input-style" id="subject" type="text" name="subject" placeholder="Subject" autocomplete="off">
 					<label>MESSAGE</label>
-					<textarea type="text" name="subject" placeholder="Message" autocomplete="off" rows="9"></textarea>
-					<button>SEND MESSAGE</button>
+					<textarea id="message" type="text" name="message" placeholder="Message" autocomplete="off" rows="9"></textarea>
+					<button type="submit">SEND MESSAGE</button>
 				</div>
 			</form>
 		</div>
@@ -221,4 +221,5 @@
 
 <script src="scripts/particles.js"></script>
 <script src="scripts/app.js"></script>
+<script src="scripts/actionsSubmit.js"></script>
 <%- include('partials/footer') %>
