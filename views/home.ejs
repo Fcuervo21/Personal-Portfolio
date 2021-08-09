@@ -1,5 +1,5 @@
 <%- include('partials/header') %>
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <navbar>
 	<ul class="nav-list">
 		<li class="nav-item">
@@ -180,6 +180,7 @@
 	</div>
 </div>
 <div class="contact-me-container" id="contact-section">
+
 	<div class="title-container">
 		<h1 class="section-title">Contact Me</h1>
 	</div>
@@ -200,26 +201,40 @@
 			</div>
 		</div>
 		<div class="contact-email-container">
+
+			
+
 			<h2>Get in touch</h2>
-			<form class="contact-form" >
+			<form class="contact-form" method="post" action="/">
 				<div class="form-elements">
 					<label>FULL NAME</label>
-					<input class="input-style" id="name" type="text" name="name" placeholder="Name" autocomplete="off">
+					<input class="input-style" id="name" type="text" name="name" placeholder="Name" autocomplete="off" value=<%= fullName %>>
 					<label>EMAIL ADDRESS</label>
-					<input class="input-style" id="email" type="email" name="email" placeholder="Email" autocomplete="off">
+					<input class="input-style" id="email" type="email" name="email" placeholder="Email" autocomplete="off" value=<%= fullEmail %>>
 					<label>SUBJECT</label>
-					<input class="input-style" id="subject" type="text" name="subject" placeholder="Subject" autocomplete="off">
+					<input class="input-style" id="subject" type="text" name="subject" placeholder="Subject" autocomplete="off" value=<%= fullSubject %>>
 					<label>MESSAGE</label>
-					<textarea id="message" type="text" name="message" placeholder="Message" autocomplete="off" rows="9"></textarea>
+					<textarea id="message" type="text" name="message" placeholder="Message" autocomplete="off" rows="9" value=<%= fullMessage %>></textarea>
 					<button type="submit">SEND MESSAGE</button>
 				</div>
 			</form>
 		</div>
 		
 	</div>
+	<% if (alertStatus) { %>
+		<script>
+			Swal.fire({
+			icon: 'success',
+			title: 'Done',
+			text: 'Email sent successfully!'
+		  });
+		</script>
+	<% } %>
 </div>
-
 <script src="scripts/particles.js"></script>
 <script src="scripts/app.js"></script>
 <script src="scripts/actionsSubmit.js"></script>
+<script src="scripts/preventResending.js"></script>
+
+
 <%- include('partials/footer') %>
