@@ -1,5 +1,5 @@
 <%- include('partials/header') %>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
 <navbar>
 	<ul class="nav-list">
 		<li class="nav-item">
@@ -202,32 +202,44 @@
 		</div>
 		<div class="contact-email-container">
 			<h2>Get in touch</h2>
-			<form class="contact-form" method="post" action="/">
+			<form class=" -form" method="post" action="/" novalidate>
 				<div class="form-elements">
 					<label>FULL NAME</label>
-					<input class="input-style" id="name" type="text" name="name" placeholder="Name" autocomplete="off" value=<%= fullName %>>
+					<input class="input-style" id="name" type="text" name="name" placeholder="Name" autocomplete="off" value="<% if(typeof valores != 'undefined') { %><%= valores.name %><% } %>">
 					<label>EMAIL ADDRESS</label>
-					<input class="input-style" id="email" type="email" name="email" placeholder="Email" autocomplete="off" value=<%= fullEmail %>>
+					<input class="input-style" id="email" type="email" name="email" placeholder="Email" autocomplete="off" value="<% if(typeof valores != 'undefined') { %><%= valores.email %><% } %>">
 					<label>SUBJECT</label>
-					<input class="input-style" id="subject" type="text" name="subject" placeholder="Subject" autocomplete="off" value=<%= fullSubject %>>
+					<input class="input-style" id="subject" type="text" name="subject" placeholder="Subject" autocomplete="off" value="<% if(typeof valores != 'undefined') { %><%= valores.subject %><% } %>">
 					<label>MESSAGE</label>
-					<textarea id="message" type="text" name="message" placeholder="Message" autocomplete="off" rows="9" value=<%= fullMessage %>></textarea>
+					<textarea id="message" type="text" name="message" placeholder="Message" autocomplete="off" rows="9" value="<% if(typeof valores != 'undefined') { %><%= valores.message %><% } %>"></textarea>
 					<button type="submit">SEND MESSAGE</button>
 				</div>
 			</form>
-		</div>
-		
+		</div>	
 	</div>
-	<% if (alertStatus) { %>
-		<script>
-			Swal.fire({
-			icon: 'success',
-			title: 'Done',
-			text: 'Email sent successfully!'
-		  });
-		</script>
-	<% } %>
 </div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<% if(typeof validaciones != 'undefined') { %>
+	<script>
+		Swal.fire({
+			icon: 'Warning',
+			title: 'Oops... Check out the form',
+			text: '<%= validaciones %> ',
+		  })
+	</script>
+<% } %>
+<% if (alertStatus) { %>
+	<script>
+		Swal.fire({
+		icon: 'success',
+		title: 'Done',
+		text: 'Email sent successfully!'
+	  });
+	</script>
+<% } %>
+
+
 
 <script src="scripts/particles.js"></script>
 <script src="scripts/app.js"></script>

@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express = require('express');
-const { check, validationResult } = require('express-validator');
+const { body, validationResult } = require('express-validator');
 const app = express();
 const ejs = require('ejs');
 const nodemailer = require('nodemailer');
@@ -12,55 +12,74 @@ app.use(express.json());
 
 app.get('/', function(req, res){
     res.render("home", {
-        alertStatus: undefined,
-        fullName: '',
-        fullEmail: '',
-        fullSubject: '',
-        fullMessage: '',
-    });
+        alertStatus: undefined
+});
 });
 
-app.post('/', function(req, res){
-        // const errors = validationResult(req);
-        // if(!errors.isEmpty()){
-        //     // return res.status(400).json({ errors: errors.array() });
-        //     const alert = errors.array();
-        //     res.render('register', {
-        //         alert
-        //     })
-        // }
-
-
-        console.log(req.body);
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: process.env.CLIENT_EMAIL,
-                pass: process.env.CLIENT_PASSWORD
-            }
-        })
-
-        const mailOptions = {
-            from : req.body.email,
-            to: process.env.CLIENT_EMAIL,//Email de arriba,
-            subject:`Message from ${req.body.email} : ${req.body.subject}`,
-            text: req.body.message
+app.post('/', [
+    body('name', '  Full name must be 3+ characters long  ')
+            .exists()
+            .isLength({ min: 2 }),
+    body('email', '  Email is not valid  ')
+            .exists()
+            .isEmail()
+            .normalizeEmail(),
+    body('subject', '  Subject must be 5+ characters long  ')
+            .exists()
+            .isLength({ min: 5 }),
+    body('message', '  Message must be 10+ characters long  ')
+            .exists()
+            .isLength({ min: 10 })
+                ],function(req, res){
+                
+        const errors = validationResult(req);
+        if(!errors.isEmpty()) {
+            console.log(req.body)
+            const valores = req.body;
+            const validaciones = errors.array();
+            const errorsArray = []
+            validaciones.forEach((validacion) => {
+                errorsArray.push(validacion.msg);
+            });
+            res.render('home', {validaciones: errorsArray, valores:valores, alertStatus: undefined})
         }
+        else {
+            // res.send("Bien pa");
+            console.log(req.body);
+            let transporter = nodemailer.createTransport({
+                host: process.env.CLIENT_HOST,
+                port: process.env.CLIENT_PORT,
+                secure: false,
+                auth: {
+                    user: process.env.CLIENT_EMAIL,
+                    pass: process.env.CLIENT_PASSWORD
+                },
+                tls: {
+                    // do not fail on invalid certs
+                    rejectUnauthorized: false,
+                  },
+            });
 
-        transporter.sendMail(mailOptions, (err, info) => {
-            if(err) {
-                console.error(err);
-                res.send('err');
-            } else {
-                console.log('Email sent: ' + info.response);
-                res.render('home', {alertStatus: true,fullName: '',
-                fullEmail: '',
-                fullSubject: '',
-                fullMessage: ''});
-            }
-        })
+
+            const mailOptions = {
+                from : process.env.CLIENT_EMAIL,
+                to: process.env.CLIENT_EMAIL,//Email de arriba,
+                subject:`Message from ${req.body.email} : ${req.body.subject}`,
+                text: req.body.message
+            };
+
+            transporter.sendMail(mailOptions, (err, info) => {
+                if(err) {
+                    console.error(err);
+                    res.send('err');
+                } else {
+                    console.log('Email sent: ' + info.response);
+                    res.render('home', {alertStatus: true});
+                }
+            });
+        }
+           
 });
-
 app.listen(3000, function () {
     console.log("Server started on port 3000");
 });
