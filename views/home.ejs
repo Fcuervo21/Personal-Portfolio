@@ -1,0 +1,248 @@
+<%- include('partials/header') %>
+<header>
+	<div class = "container">
+		<div class = "navbar">
+			<a href="#"><img src="images/raven.svg"" class="logo"></a>
+			<nav>
+				<ul id="menuList">
+					<li><a id="all-sections" onclick="setMenuSmall()" href= "#about-section">About Me</a></li>
+					<li><a id="all-sections" onclick="setMenuSmall()" href="#project-section">Projects</a></li>
+					<li><a id="all-sections" onclick="setMenuSmall()" href="#skills-section">Skills</a></li>
+					<li><a id="all-sections" onclick="setMenuSmall()" href="#contact-section">Contact</a></li>
+					
+				</ul>
+			</nav>
+			<img src="images/squared-menu-50.png" class = "menu-icon" onclick="togglemenu()">
+		</div>
+	</div>
+</header>
+<div id="particles-js">
+	<div class="first-box">
+		<p class="my-name-fline">Hi, I'm</p>
+		<h1 class="my-name">Fernando Cuervo</h1>
+		<p class="my-name-p">Computer Science Student</p>
+	</div>
+</div>
+
+<div class="about-me-container" id="about-section">
+	<div class="title-container">
+		<h1 class="section-title">About me</h1>
+	</div>
+	<div class="about-info-container">
+		<img src="images/ProfilePictureCircular.png" class="about-img" alt="fernando-img" />
+		<div class="about-me-content">
+			<h3 class="firsts-subtitle">Who am I?</h3>
+			<p class="paragraph-info">
+				I'm Fernando Cuervo, a Computer Science Student
+			</p>
+			<p class="paragraph-info-third">
+				For a while now I have found my passion,
+				<b>software development.</b> I am a person who wakes up every
+				day with the desire to learn and improve. In my free time I like
+				to do personal projects to improve my skills.
+			</p>
+		</div>
+	</div>
+	<div class="phrase">
+		<h1 class="my-phrase">
+			"YOU CAN DO ANYTHING IF YOU SET GOALS.<br />YOU JUST HAVE TO PUSH
+			YOURSELF"
+		</h1>
+		<p class="my-phrase-author">RJ MITTE</p>
+	</div>
+</div>
+
+<div class="projects-container" id="project-section">
+	<div class="title-container">
+		<h1 class="section-title">Projects</h1>
+	</div>
+
+	<div class="cards-container">
+		<div class="card">
+			<div class="card-header">
+				<img
+					src="images/sorting-visualization.png"
+					alt="sorting Algorithms visualization image"
+				/>
+			</div>
+			<div class="card-body">
+				<div class="tag-container">
+					<span class="tag tag-teal">HTML</span>
+					<span class="tag tag-teal">CSS</span>
+					<span class="tag tag-teal">JS</span>
+				</div>
+				<h4>Sorting Algorithms Visualization</h4>
+				<p>
+					The project was done using the external chartjs package.Different sorting algorithms were performed, altering the columns of the table according to the parameters entered by the user.
+				</p>
+				<div class="card-links">
+					<a href="https://github.com/RafaGomezGlez/WebVisualization" target="_blank" rel="noopener noreferrer"><img src="images/github.svg" /></a>
+					<a href="#"><button class="btn-link">See more</button></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="card-header">
+				<img
+					src="images/todolist.jpg"
+					alt="to do list image"
+				/>
+			</div>
+			<div class="card-body">
+				<div class="tag-container">
+					<span class="tag tag-teal">HTML</span>
+					<span class="tag tag-teal">BOOTSTRAP</span>
+					<span class="tag tag-teal">JS</span>
+					<span class="tag tag-teal">NODE</span>
+					<span class="tag tag-teal">MONGODB</span>
+				</div>
+				<h4>To Do List</h4>
+				<p>
+					The project was carried out using bootstrap as the general purpose of this was to connect to the non-relational database, altering, creating and deleting its values. The site was deployed with Heroku.
+				</p>
+				<div class="card-links">
+					<a href="#" target="_blank" rel="noopener noreferrer"><img src="images/github.svg" /></a>
+					<a href="https://raventodolist.herokuapp.com/" target="_blank" rel="noopener noreferrer"><button class="btn-link">See more</button></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="card-header">
+				<img
+					src="images/lorem-ipsum-project.jpg"
+					alt="lorem ipsum generation image"
+				/>
+			</div>
+			<div class="card-body">
+				<div class="tag-container">
+					<span class="tag tag-teal">HTML</span>
+					<span class="tag tag-teal">CSS</span>
+					<span class="tag tag-teal">JS</span>
+					<span class="tag tag-teal">REACT</span>
+				</div>
+				<h4>Lorem Ipsum Generator</h4>
+				<p>
+					The project was carried out from scratch using ReactJs. The
+					purpose of this project was to practice building components,
+					using Hooks, useStates, among others.
+				</p>
+				<div class="card-links">
+					<a href="https://github.com/Fcuervo21/raven-lorem-ipsum" target="_blank" rel="noopener noreferrer"><img src="images/github.svg" /></a>
+					<a href="https://raven-lorem-ipsum.herokuapp.com/" target="_blank" rel="noopener noreferrer"><button class="btn-link">See more</button></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="card-header">
+				<img
+					src="images/personal-portfolio.png"
+					alt="personal porfolio image"
+				/>
+			</div>
+			<div class="card-body">
+				<div class="tag-container">
+					<span class="tag tag-teal">HTML</span>
+					<span class="tag tag-teal">CSS</span>
+					<span class="tag tag-teal">JS</span>
+					<span class="tag tag-teal">NODE</span>
+					<span class="tag tag-teal">EXPRESS</span>
+				</div>
+				<h4>Personal Portfolio</h4>
+				<p>
+					This website was built from scratch using the technologies mentioned above.  The general purpose of this project apart from being a personal portfolio, is to know how to deploy a site through an external host, as was the practice of express js to be able to send emails using nodemailer and to learn about form authentication.
+				</p>
+				<div class="card-links">
+					<a href="https://github.com/Fcuervo21/Personal-Portfolio" target="_blank" rel="noopener noreferrer"><img src="images/github.svg" /></a>
+					<a href="#"><button class="btn-link">Go home</button></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="skills-container" id="skills-section">
+	<div class="title-container">
+		<h1 class="section-title">Skills</h1>
+	</div>
+	<div class="skills-icons-grid">
+		<img class="skills-images" src="images/html.png" alt="html-icon" />
+		<img class="skills-images" src="images/CSS3.png" alt="css-icon" />
+		<img class="skills-images" src="images/js.png" alt="javascript-icon" />
+		<img class="skills-images" src="images/nodejs.png" alt="nodejs-icon" />
+		<img class="skills-images" src="images/gitlogo.png" alt="git-icon" />
+		<img class="skills-images" src="images/python-logo.png" alt="python-icon"/>
+		<img class="skills-images" src="images/sql.png" alt="sql-icon" />
+		<img class="skills-images" src="images/mongodb.png" alt="mongodb-icon"/>
+		<img class="skills-images" src="images/React-icon.png" alt="react-icon"/>
+	</div>
+</div>
+
+<div class="contact-me-container" id="contact-section">
+	<div class="title-container">
+		<h1 class="section-title">Contact Me</h1>
+	</div>
+	<div class="contact-container">
+		<div class="contact-info-container">
+			<h2>Let's get in touch</h2>
+			<p>You can find my contact information below by clicking on the icons or fill the form to send an email.</p>
+
+			<div class="social-media-blocks">
+				<div class="social-media-blocks-card">
+					<a href="https://www.linkedin.com/in/fernando-cuervo-ledesma-1184b21b7/" target="_blank" rel="noopener noreferrer"><img src="images/linkedin-contact.png" /></a>
+					<h3 class="social-media-blocks-card-title">LinkedIn</h3>
+				</div>
+				<div class="social-media-blocks-card">
+					<a href="https://github.com/Fcuervo21" target="_blank" rel="noopener noreferrer"><img src="images/github-contact.png" /></a>
+					<h3 class="social-media-blocks-card-title" >Github</h3>
+				</div>
+			</div>
+		</div>
+		<div class="contact-email-container">
+			<h2>Get in touch</h2>
+			<form class=" -form" method="post" action="/" novalidate>
+				<div class="form-elements">
+					<label>FULL NAME</label>
+					<input class="input-style" id="name" type="text" name="name" placeholder="Name" autocomplete="off" value="<% if(typeof valores != 'undefined') { %><%= valores.name %><% } %>">
+					<label>EMAIL ADDRESS</label>
+					<input class="input-style" id="email" type="email" name="email" placeholder="Email" autocomplete="off" value="<% if(typeof valores != 'undefined') { %><%= valores.email %><% } %>">
+					<label>SUBJECT</label>
+					<input class="input-style" id="subject" type="text" name="subject" placeholder="Subject" autocomplete="off" value="<% if(typeof valores != 'undefined') { %><%= valores.subject %><% } %>">
+					<label>MESSAGE</label>
+					<textarea id="message" type="text" name="message" placeholder="Message" autocomplete="off" rows="9" value="<% if(typeof valores != 'undefined') { %><%= valores.message %><% } %>"></textarea>
+					<button type="submit">SEND MESSAGE</button>
+				</div>
+			</form>
+		</div>	
+	</div>
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<% if(typeof validaciones != 'undefined') { %>
+	<script>
+		Swal.fire({
+			icon: 'warning',
+			title: 'Oops... Check out the form',
+			text: '<%= validaciones %> ',
+		  })
+	</script>
+<% } %>
+<% if (alertStatus) { %>
+	<script>
+		Swal.fire({
+		icon: 'success',
+		title: 'Done',
+		text: 'Email sent successfully!'
+	  });
+	</script>
+<% } %>
+
+<script src="scripts/responsiveNavbar.js"></script>
+<script src="scripts/particles.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/preventResending.js"></script>
+
+
+<%- include('partials/footer') %>
