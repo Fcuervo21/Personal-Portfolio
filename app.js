@@ -44,8 +44,7 @@ app.post('/', [
             res.render('home', {validaciones: errorsArray, valores:valores, alertStatus: undefined})
         }
         else {
-            // res.send("Bien pa");
-            console.log(req.body);
+            // console.log(req.body);
             let transporter = nodemailer.createTransport({
                 host: process.env.CLIENT_HOST,
                 port: process.env.CLIENT_PORT,
@@ -70,10 +69,10 @@ app.post('/', [
 
             transporter.sendMail(mailOptions, (err, info) => {
                 if(err) {
-                    console.error(err);
+                    // console.error(err);
                     res.send('err');
                 } else {
-                    console.log('Email sent: ' + info.response);
+                    // console.log('Email sent: ' + info.response);
                     res.render('home', {alertStatus: true});
                 }
             });
