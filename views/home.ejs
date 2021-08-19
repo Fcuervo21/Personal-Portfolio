@@ -1,17 +1,21 @@
 <%- include('partials/header') %>
-<!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
-<navbar>
-	<ul class="nav-list">
-		<li class="nav-item">
-			<a href="#"><img src="images/raven.svg" /></a>
-		</li>
-		<li class="nav-item"><a href="#about-section">About</a></li>
-		<li class="nav-item"><a href="#project-section">Projects</a></li>
-		<li class="nav-item"><a href="#skills-section">Skills</a></li>
-		<li class="nav-item"><a href="#contact-section">Contact</a></li>
-	</ul>
-</navbar>
-
+<header>
+	<div class = "container">
+		<div class = "navbar">
+			<a href="#"><img src="images/raven.svg"" class="logo"></a>
+			<nav>
+				<ul id="menuList">
+					<li><a id="all-sections" onclick="setMenuSmall()" href= "#about-section">About Me</a></li>
+					<li><a id="all-sections" onclick="setMenuSmall()" href="#project-section">Projects</a></li>
+					<li><a id="all-sections" onclick="setMenuSmall()" href="#skills-section">Skills</a></li>
+					<li><a id="all-sections" onclick="setMenuSmall()" href="#contact-section">Contact</a></li>
+					
+				</ul>
+			</nav>
+			<img src="images/squared-menu-50.png" class = "menu-icon" onclick="togglemenu()">
+		</div>
+	</div>
+</header>
 <div id="particles-js">
 	<div class="first-box">
 		<p class="my-name-fline">Hi, I'm</p>
@@ -219,7 +223,7 @@
 <% if(typeof validaciones != 'undefined') { %>
 	<script>
 		Swal.fire({
-			icon: 'Warning',
+			icon: 'warning',
 			title: 'Oops... Check out the form',
 			text: '<%= validaciones %> ',
 		  })
@@ -235,8 +239,7 @@
 	</script>
 <% } %>
 
-
-
+<script src="scripts/responsiveNavbar.js"></script>
 <script src="scripts/particles.js"></script>
 <script src="scripts/app.js"></script>
 <script src="scripts/preventResending.js"></script>
