@@ -237,6 +237,14 @@
 		text: 'Email sent successfully!'
 	  });
 	</script>
+<% } else if(alertStatus === false) { %>
+	<script>
+		Swal.fire({
+		icon: 'error',
+		title: 'Ups, Im working on it! ',
+		text: 'Email not working, try other method'
+	  });
+	</script>
 <% } %>
 
 <script src="scripts/responsiveNavbar.js"></script>

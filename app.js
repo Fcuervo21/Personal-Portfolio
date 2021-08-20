@@ -13,7 +13,7 @@ app.use(express.json());
 
 app.get('/', function(req, res){
     res.render("home", {
-        alertStatus: undefined
+        alertStatus: undefined,
 });
 });
 
@@ -64,7 +64,7 @@ app.post('/', [
             transporter.sendMail(mailOptions, (err, info) => {
                 if(err) {
                     // console.error(err);
-                    res.send('err');
+                    res.send('home', {alertStatus: false});
                 } else {
                     // console.log('Email sent: ' + info.response);
                     res.render('home', {alertStatus: true});

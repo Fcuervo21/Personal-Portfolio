@@ -144,9 +144,6 @@ nav ul li a:hover{
 
 .about-img{
     width: 30%;
-    border: solid 2px #000;
-    border-radius:200px;
-
 }
 .about-me-content{
     display: flex;
