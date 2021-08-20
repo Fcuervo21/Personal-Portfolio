@@ -47,22 +47,15 @@ app.post('/', [
         else {
             // console.log(req.body);
             const transporter = nodemailer.createTransport({
-                host: process.env.CLIENT_HOST,
-                port: process.env.CLIENT_PORT,
-                secure: true,
+                service: process.env.CLIENT_HOST,
                 auth: {
                     user: process.env.CLIENT_EMAIL,
                     pass: process.env.CLIENT_PASSWORD
                 }
             });
 
-            // transporter.verify().then( () => {
-            //     console.log("Ready for sending emails")
-            // })
-
-
             const mailOptions = {
-                from : process.env.CLIENT_EMAIL,
+                from : req.body.email,
                 to: process.env.CLIENT_EMAIL,//Email de arriba,
                 subject:`Message from ${req.body.email} : ${req.body.subject}`,
                 text: req.body.message
