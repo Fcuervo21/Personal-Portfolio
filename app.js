@@ -35,7 +35,7 @@ app.post('/', [
                 
         const errors = validationResult(req);
         if(!errors.isEmpty()) {
-            console.log(req.body)
+            // console.log(req.body)
             const valores = req.body;
             const validaciones = errors.array();
             const errorsArray = []
@@ -46,19 +46,19 @@ app.post('/', [
         }
         else {
             // console.log(req.body);
-            let transporter = nodemailer.createTransport({
+            const transporter = nodemailer.createTransport({
                 host: process.env.CLIENT_HOST,
                 port: process.env.CLIENT_PORT,
-                secure: false,
+                secure: true,
                 auth: {
                     user: process.env.CLIENT_EMAIL,
                     pass: process.env.CLIENT_PASSWORD
-                },
-                tls: {
-                    // do not fail on invalid certs
-                    rejectUnauthorized: false,
-                  },
+                }
             });
+
+            // transporter.verify().then( () => {
+            //     console.log("Ready for sending emails")
+            // })
 
 
             const mailOptions = {
