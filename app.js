@@ -55,7 +55,7 @@ app.post('/', [
             });
 
             const mailOptions = {
-                from : req.body.email,
+                from : process.env.CLIENT_EMAIL,
                 to: process.env.CLIENT_EMAIL,//Email de arriba,
                 subject:`Message from ${req.body.email} : ${req.body.subject}`,
                 text: req.body.message
@@ -71,7 +71,7 @@ app.post('/', [
                 }
             });
         }
-           
+        
 });
 app.listen(app.get('port'), function () {
     console.log("Server started on port", app.get('port'));
